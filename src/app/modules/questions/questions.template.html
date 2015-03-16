@@ -1,0 +1,24 @@
+<section>
+    <header>
+        <h2>Ask Experts</h2>
+    </header>
+    <article>
+        <div class="input">
+            <label>Topic</label>
+            <select ng-model="question.course">
+                <option value="general">General</option>
+                <option value="angular">Angular JS</option>
+                <option value="HTML">HTML</option>
+                <option value="css">CSS</option>
+                <option value="Javascript">JavaScript</option>
+            </select>
+        </div>
+        <div class="input">
+            <label>Question</label>
+            <textarea auto-height ng-model="question.question"></textarea>
+        </div>
+        <div class="input">
+            <button type="submit" class="button-positive button" ng-click="submitQuestion()">Submit</button>
+        </div>
+    </article>
+</section>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="braintrain">
+    <head>
+        <title>Angular JS - Course</title>
+        <link href="app/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <ng-include src="'app/modules/common/header/header.html'"></ng-include>
+        <ng-view></ng-view>
+        <ng-include src="'app/modules/common/footer/footer.html'"></ng-include>
+        <script type="text/javascript" src="app/lib/angular/angular.js"></script>
+        <script type="text/javascript" src="app/lib/firebase/firebase.js"></script>
+        <script type="text/javascript" src="app/lib/angular/angular-route.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
+        <script type="text/javascript" src="app/modules/common/common.modules.js"></script>
+        <script type="text/javascript" src="app/modules/common/directives/common.directives.js"></script>
+        <script type="text/javascript" src="app/modules/dashboard/dashboard.controller.js"></script>
+        <script type="text/javascript" src="app/modules/dashboard/dashboard.service.js"></script>
+        <script type="text/javascript" src="app/modules/questions/questions.service.js"></script>
+        <script type="text/javascript" src="app/modules/questions/questions.controller.js"></script>
+        <script type="text/javascript" src="app/modules/suggestions/suggestions.service.js"></script>
+        <script type="text/javascript" src="app/modules/suggestions/suggestions.controller.js"></script>
+
+    </body>
+</html>
