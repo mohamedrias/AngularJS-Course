@@ -6,5 +6,6 @@
  * File name : common.modules.js
  */
 (function() {
+	"use strict";
 	angular.module("common.modules", []);
 })();

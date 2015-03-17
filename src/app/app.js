@@ -8,6 +8,7 @@
 (function() {
 	"use strict";
 	var app = angular.module("braintrain",["ngRoute", "common.modules"]);
+	
 	app.config(function($routeProvider) {
 		$routeProvider
 			.when("/", {

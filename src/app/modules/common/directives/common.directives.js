@@ -6,9 +6,9 @@
  * File name : common.directives.js
  */
 (function () {
+	"use strict";
 	angular.module("common.modules")
 		.directive("autoHeight", function () {
-
 			return {
 				restrict : "EAC",
 				link : function(scope, element, attrs) {

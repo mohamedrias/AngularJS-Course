@@ -21,5 +21,6 @@ angular.module("braintrain")
 			});
 			return defer.promise;
 		};
+
 		return DashboardService;
 	});
