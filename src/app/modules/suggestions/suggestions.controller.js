@@ -7,23 +7,23 @@
  */
 
 angular.module("braintrain")
-	.controller("SuggestionsController", ["$scope", "SuggestionsService",  function($scope,SuggestionsService) {
-		$scope.suggestion = {};
+    .controller("SuggestionsController", ["$scope", "SuggestionsService", function ($scope, SuggestionsService) {
+        $scope.suggestion = {};
 
-		$scope.submitSuggestion = function() {
-			if(!$scope.suggestion.course) {
-				alert("Please enter the category");
-				return;
-			}
-			if(!$scope.suggestion.suggestion) {
-				alert("Please enter suggestion to submit");
-				return;
-			}
+        $scope.submitSuggestion = function () {
+            if (!$scope.suggestion.course) {
+                alert("Please enter the category");
+                return;
+            }
+            if (!$scope.suggestion.suggestion) {
+                alert("Please enter suggestion to submit");
+                return;
+            }
 
-			SuggestionsService.submitSuggestion($scope.suggestion)
-				.then(function(data) {
-					$scope.suggestion = {};
-					alert("Thanks for submitting your suggestion");
-				});
-		}
-	}]);
+            SuggestionsService.submitSuggestion($scope.suggestion)
+                .then(function (data) {
+                    $scope.suggestion = {};
+                    alert("Thanks for submitting your suggestion");
+                });
+        }
+ }]);

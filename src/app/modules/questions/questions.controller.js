@@ -6,23 +6,25 @@
  * File name : questions.controller.js
  */
 angular.module("braintrain")
-	.controller("QuestionsController", ["$scope", "QuestionsService",  function($scope,QuestionsService) {
-		$scope.question = {};
+    .controller("QuestionsController", ["$scope", "QuestionsService", function ($scope, QuestionsService) {
+        $scope.question = {};
+        /**
+         * Submit function to validate the data and submit it to the server
+         */
+        $scope.submitQuestion = function () {
+            if (!$scope.question.course) {
+                alert("Please enter the category");
+                return;
+            }
+            if (!$scope.question.question) {
+                alert("Please enter question to submit");
+                return;
+            }
 
-		$scope.submitQuestion = function() {
-			if(!$scope.question.course) {
-				alert("Please enter the category");
-				return;
-			}
-			if(!$scope.question.question) {
-				alert("Please enter question to submit");
-				return;
-			}
-
-			QuestionsService.submitQuestion($scope.question)
-				.then(function(data) {
-					$scope.question = {};
-					alert("Thanks for submitting your questions");
-				});
-		}
-	}]);
+            QuestionsService.submitQuestion($scope.question)
+                .then(function (data) {
+                    $scope.question = {};
+                    alert("Thanks for submitting your questions");
+                });
+        };
+ }]);

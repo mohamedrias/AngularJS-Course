@@ -7,20 +7,19 @@
  */
 
 angular.module("braintrain")
-	.factory("DashboardService", function($q, $timeout) {
+    .factory("DashboardService", function ($q, $timeout) {
 
-		var DashboardService = {},
-			DashboardServiceRef = new Firebase("https://rasng.firebaseio.com/Today");
+        var DashboardService = {},
+            DashboardServiceRef = new Firebase("https://rasng.firebaseio.com/Today");
 
-		DashboardService.getDetails = function() {
-			var defer = $q.defer();
-			DashboardServiceRef.on("value", function(data) {
-				DashboardService.data = data.val() || [];
-				console.log(DashboardService.data);
-				defer.resolve(DashboardService.data);
-			});
-			return defer.promise;
-		};
+        DashboardService.getDetails = function () {
+            var defer = $q.defer();
+            DashboardServiceRef.on("value", function (data) {
+                DashboardService.data = data.val() || [];
+                defer.resolve(DashboardService.data);
+            });
+            return defer.promise;
+        };
 
-		return DashboardService;
-	});
+        return DashboardService;
+    });

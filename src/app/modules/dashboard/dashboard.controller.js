@@ -6,12 +6,14 @@
  * File name : dashboard.controller.js
  */
 
-(function() {
-	angular.module("braintrain")
-		.controller("DashboardController", [ "$scope", "DashboardService", function($scope, DashboardService) {
-			DashboardService.getDetails()
-				.then(function(data) {
-					$scope.today = data;
-				});
-		}]);
+(function () {
+    angular.module("braintrain")
+        .controller("DashboardController", ["$scope", "DashboardService", function ($scope, DashboardService) {
+            //TODO: Move it to router and resolve it there
+            // Invokes dashboard service getDetails method to fetch the data from server.
+            DashboardService.getDetails()
+                .then(function (data) {
+                    $scope.today = data;
+                });
+  }]);
 })();

@@ -7,23 +7,23 @@
  */
 
 angular.module("braintrain")
-	.factory("SuggestionsService", function($q, $timeout) {
+    .factory("SuggestionsService", function ($q, $timeout) {
 
-		var SuggestionService = {},
-			suggestionFBRef = new Firebase("https://rasng.firebaseio.com/suggestions");
+        var SuggestionService = {},
+            suggestionFBRef = new Firebase("https://rasng.firebaseio.com/suggestions");
 
-		suggestionFBRef.on("value", function(data) {
-			SuggestionService.data = data.val() || [];
-		});
+        suggestionFBRef.on("value", function (data) {
+            SuggestionService.data = data.val() || [];
+        });
 
-		SuggestionService.submitSuggestion = function(suggestion) {
-			var defer = $q.defer();
-			suggestionFBRef.push(suggestion);
-			$timeout(function() {
-				defer.resolve(SuggestionService.data);
-			}, 100);
-			return defer.promise;
-		}
+        SuggestionService.submitSuggestion = function (suggestion) {
+            var defer = $q.defer();
+            suggestionFBRef.push(suggestion);
+            $timeout(function () {
+                defer.resolve(SuggestionService.data);
+            }, 100);
+            return defer.promise;
+        }
 
-		return SuggestionService;
-	});
+        return SuggestionService;
+    });
